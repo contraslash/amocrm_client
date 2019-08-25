@@ -212,6 +212,30 @@ class AmoCRMClient(object):
         if lead_response.ok:
             return lead_response.json() if self._use_json else lead_response.content
 
+    def get_leads(self, offset=0):
+        """
+        Get 500 leads
+        :param offset:
+        :return:
+        """
+        lead_response = self._session.get(
+            self.url_builder.get_url_for(URLBuilder.SET_LEADS),
+        )
+        if lead_response.ok:
+            return lead_response.json() if self._use_json else lead_response.content
+
+    def get_single_lead(self, id):
+        """
+                Get 500 leads
+                :param offset:
+                :return:
+                """
+        lead_response = self._session.get(
+            self.url_builder.get_url_for(URLBuilder.SET_LEADS, {"id": id}),
+        )
+        if lead_response.ok:
+            return lead_response.json() if self._use_json else lead_response.content
+
     def move_lead_to_next_status(self, lead_id, new_status_id):
         """
         Move a lead to a new column

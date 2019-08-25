@@ -8,6 +8,7 @@ class URLBuilder(object):
     SET_PIPELINES = "set_pipelines"
     DELETE_PIPELINES = "delete_pipelines"
     SET_LEADS = "set_leads"
+    GET_LEADS = "get_leads"
 
     ENDPOINTS = {
         LOGIN_ENDPOINT: conf.AMOCRM_LOGIN_URL,
@@ -15,6 +16,7 @@ class URLBuilder(object):
         SET_PIPELINES: conf.AMOCRM_SET_PIPELINES_URL,
         DELETE_PIPELINES: conf.AMOCRM_DELETE_PIPELINES_URL,
         SET_LEADS: conf.AMOCRM_LEADS_URL,
+        GET_LEADS: conf.AMOCRM_LEADS_URL,
 
     }
 
